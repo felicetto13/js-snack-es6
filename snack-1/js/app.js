@@ -24,7 +24,7 @@ let bici = [
 },
 {
     nome: "Cannondale",
-    peso: 557,
+    peso: 57,
 },
 {
     nome: "Cervelo ",
@@ -35,3 +35,26 @@ let bici = [
     peso: 41,
 }
 ]
+
+let pesoR = 0;
+let pesoMinore;
+const container = document.getElementById("container")
+for (let i = 0; i < bici.length; i++){
+    controllaPeso(bici[i]);
+}
+const {nome, peso} = pesoMinore;
+container.innerHTML = `
+<h1>La bici che pesa di meno è la seguente:</h1>
+<h3>Nome bici: ${nome}</h3>
+<h3>Peso bici: ${peso}</h3>
+`
+console.log(nome, peso)
+// creo funzione che controlli il peso delle bici e trovi quella con peso minore
+function controllaPeso (bici) {
+    
+    
+    if (pesoR === 0 || pesoR > bici.peso) {
+        pesoR = bici.peso;
+        pesoMinore = bici;
+    }
+}
